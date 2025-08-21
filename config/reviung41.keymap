@@ -15,6 +15,15 @@
 #define ADJUST 3
 
 / {
+    behaviors {
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-soft-off";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            hold-time-ms = <180000>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -56,10 +65,10 @@
             //                       |     | ADJ | BKSP |    |     |
 
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6          &kp F7  &kp F8      &kp F9           &kp F10     &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans      &kp C_VOLUME_UP  &trans      &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &kp K_PREV  &kp C_VOL_DN     &kp K_NEXT  &trans   &trans
-                        &trans  &trans          &trans          &trans      &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6             &kp F7  &kp F8      &kp F9           &kp F10     &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans             &trans  &trans      &kp C_VOLUME_UP  &trans      &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans             &trans  &kp K_PREV  &kp C_VOL_DN     &kp K_NEXT  &trans   &trans
+                        &trans  &trans          &soft_off          &trans      &trans
             >;
         };
 
