@@ -15,15 +15,6 @@
 #define ADJUST 3
 
 / {
-    behaviors {
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-soft-off";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            hold-time-ms = <180000>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
